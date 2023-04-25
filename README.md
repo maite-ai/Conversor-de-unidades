@@ -19,8 +19,8 @@ Crear un conversor de unidades, que convierta unidades de medida comunes como lo
 - 1 m -> 3,28084 pies 
 - pies -> m (Dividir el valor por 3,281 aprox) 
 
-### Peso ⚖️
-1. Kilogramos a Libras / Libras a Kilogramos:
+### Masa ⚖️
+#### Kilogramos a Libras / Libras a Kilogramos:
 - 1 kg -> 2,20462 lb
 - libra -> kg (Dividir el valor por 2,205)
 
