@@ -1,98 +1,96 @@
+import re
 def metre_to_yard(value):
-	yard = 0.0
-	return yard
+	yard = round(value * 1.0936, 2)
+	print(f"{value} metro/s = {yard} yarda/s")
 
 def yard_to_metre(value):
-	metre = 0.0
-	return metre
+	metre = round(value / 1.0936, 2) 
+	print(f"{value} yarda/s = {metre} metro/s")
 
 def mille_to_kilometre(value):
-	kilometre = 0.0
-	return kilometre
+	kilometre = round(value * 1.60934, 2) 
+	print(f"{value} milla/s = {kilometre} kilómetro/s")
 
 def kilometre_to_mille(value):
-	mille = 0.0
-	return mille
+	mille = round(value / 1.60934, 2)
+	print(f"{value} kilómetro/s = {mille} milla/s")
 
 def feet_to_metre(value):
-	metre = 0.0
-	return metre
+	metre = round(value * 3.28084, 2)
+	print(f"{value} pie/s = {metre} metro/s")
 
 def metre_to_feet(value):
-	feet = 0.0
-	return feet
+	feet = round(value / 3.28084, 2)
+	print(f"{value} metro/s = {feet} pie/s")
 
 def kilo_to_pound(value):
-	pound = 0.0
-	return pound
+	pound = round(value * 2.20462, 2)
+	print(f"{value} kilogramo/s = {pound} libra/s")
 
 def pound_to_kilo(value):
-	kilo = 0.0
-	return  kilo
+	kilo = round(value / 2.20462, 2)
+	print(f"{value} libra/s = {kilo} kilogramo/s")
 
 def ounce_to_gram(value):
-	gram = 0.0
-	return gram
+	gram = round(value * 28.3495, 2)
+	print(f"{value} onza/s = {gram} gramo/s")
 
 def gram_to_ounce(value):
-	ounce = 0.0
-	return ounce
+	ounce = round(value / 28.3495, 2)
+	print(f"{value} gramo/s = {ounce} onza/s")
 
 def celsius_to_fahrenheit(value):
-	fahrenheit = 0.0
-	return fahrenheit
+	fahrenheit = round((value * 9/5) + 32, 2)
+	print(f"{value} °C = {fahrenheit} °F")
 
 def celsius_to_kelvin(value):
-	kelvin = 0.0
-	return kelvin
+	kelvin = round(value + 273.15, 2)
+	print(f"{value} °C = {kelvin} °K")
 
 def fahrenheit_to_celsius(value):
-	celsius = 0.0
-	return celsius
+	celsius = round((value - 32) * 5/9, 2)
+	print(f"{value} °F = {celsius} °C")
 
 def fahrenheit_to_kelvin(value):
-	kelvin = 0.0
-	return kelvin
+	kelvin = round((value -32) * 5/9 + 273.15, 2)
+	print(f"{value} °F = {kelvin} °K")
 
 def kelvin_to_celsius(value):
-	celsius = 0.0
-	return celsius
+	celsius = round(value - 273.15, 2)
+	print(f"{value} °K = {celsius} °C")
 
 def kelvin_to_fahrenheit(value):
-	fahrenheit = 0.0
-	return fahrenheit
+	fahrenheit = round((value - 273.15) * 9/5 + 32, 2)
+	print(f"{value} °K = {fahrenheit} °F")
+ 
+origin_measure = input("Medida de origen (en singular): ")
+target_measure = input("Medida a convertir (en singular): ")
 
-op = ""
-one_value = "Ingrese un valor: "
+pattern = r"metr[o]s?"
+origin_search = re.findall(pattern, origin_measure, flags = re.IGNORECASE)
+target_search = re.findall(pattern, origin_measure, flags = re.IGNORECASE)
 
-if op == "metro a yarda":
-    metre_value = int(input(one_value))
-    metre_to_yard(metre_value)
-elif op == "yarda a metro":
-    yard_value = int(input(one_value))
-    yard_to_metre(yard_value)
-elif op == "km a milla":
-    kilometre_value = int(input(one_value))
-    kilometre_to_mille(kilometre_value)
-elif op == "milla a km":
-    mille_value = int(input(one_value))
-    mille_to_kilometre(mille_value)
-elif op == "metre":
-    kilo_value = int(input(one_value))
-elif op == "c a f":
-    celsius_value = int(input(one_value))
-    celsius_to_fahrenheit(celsius_value)
-elif op == "f a c":
-    fahrenheit_value = int(input(one_value))
-    fahrenheit_to_celsius(fahrenheit_value)
-elif op == "f a k":
-    fahrenheit_value = int(input(one_value))
-    fahrenheit_to_kelvin(fahrenheit_value)
-elif op == "k a f":
-    kelvin_value = int(input(one_value))
-    kelvin_to_fahrenheit(kelvin_value)
-elif op == "k a c":
-    kelvin_value = int(input(one_value))
-    kelvin_to_celsius(kelvin_value)
-else:
-    print("Opción no soportada")
+
+one_value = int(input("Ingresa un valor: "))
+
+print("\nCONVERSOR DE MEDIDAS DE LONGITUD")
+metre_to_yard(one_value)
+yard_to_metre(one_value)
+kilometre_to_mille(one_value)
+mille_to_kilometre(one_value)
+metre_to_feet(one_value)
+feet_to_metre(one_value)
+
+print("\nCONVERSOR DE MEDIDAS DE MASA")
+kilo_to_pound(one_value)
+pound_to_kilo(one_value)
+ounce_to_gram(one_value)
+gram_to_ounce(one_value)
+
+print("\nCONVERSOR DE MEDIDAS DE TEMPERATURA")
+celsius_to_fahrenheit(one_value)
+celsius_to_kelvin(one_value)
+fahrenheit_to_celsius(one_value)
+fahrenheit_to_kelvin(one_value)
+kelvin_to_fahrenheit(one_value)
+kelvin_to_celsius(one_value)
