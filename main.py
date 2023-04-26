@@ -73,7 +73,7 @@ mille_to_kilometre(one_value)
 metre_to_feet(one_value)
 feet_to_metre(one_value)
 
-print("\nCONVERSOR DE MEDIDAS (MASA)")
+print("\nCONVERSOR DE MEDIDAS (PESO)")
 kilo_to_pound(one_value)
 pound_to_kilo(one_value)
 ounce_to_gram(one_value)
