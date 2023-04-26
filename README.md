@@ -30,7 +30,7 @@ Crear un conversor de unidades, que convierta unidades de medida comunes como lo
 
 
 ### Temperatura 🌡️
-#### Celsius a Fahreinheit / Fahrenheit a Celsius:
+#### Celsius a Fahrenheit / Fahrenheit a Celsius:
 - C -> F => (X °C × 9/5) + 32 = Y °F
 - F -> C => (X °F − 32) × 5/9 = Y °C
 
